@@ -1,0 +1,270 @@
+/* Reset and basic styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Container layout */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.dark .chat-container {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.dark .chat-header {
+  background-color: #374151;
+  border-bottom: 1px solid #444;
+}
+
+.chat-title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+.chat-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* "lingua" is styled with blue */
+  color: #3b82f6;  /* blue */
+}
+
+.chat-title span {
+  /* "AI" is styled with black */
+  color: #000000;
+}
+
+/* For dark mode, if needed, you can override like so */
+.dark .chat-title {
+  color: #3b82f6; /* keep "lingua" blue in dark mode */
+}
+
+.dark .chat-title span {
+  color: #ffffff; /* or white for contrast; adjust if you want black */
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Main chat area */
+.chat-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.empty-message {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 2rem;
+}
+
+/* Message container and styling */
+.message-container {
+  margin-bottom: 1rem;
+}
+
+.message-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.message-user {
+  justify-content: flex-end;
+}
+
+.message-ai {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  word-wrap: break-word;
+}
+
+.message-user .message-bubble {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-bottom-right-radius: 0;
+}
+
+.message-ai .message-bubble {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border-bottom-left-radius: 0;
+}
+
+.dark .message-ai .message-bubble {
+  background-color: #4b5563;
+  color: #f3f4f6;
+}
+
+/* Action Panel */
+.action-panel {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.dark .action-panel {
+  background-color: #374151;
+  border: 1px solid #444;
+}
+
+.detected-language {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dark .detected-language {
+  color: #ccc;
+}
+
+.action-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.action-button:hover {
+  background-color: #2563eb;
+}
+
+.translate-section {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.translate-section select {
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.translate-section button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.translate-section button:hover {
+  background-color: #2563eb;
+}
+
+.summary {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.translated-text {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+/* Input area */
+.chat-input-area {
+  display: flex;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+.dark .chat-input-area {
+  background-color: #374151;
+  border-top: 1px solid #444;
+}
+
+.chat-textarea {
+  flex: 1;
+  padding: 0.75rem;
+  resize: none;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.dark .chat-textarea {
+  background-color: #4b5563;
+  border: 1px solid #6b7280;
+  color: #f3f4f6;
+}
+
+.send-button {
+  margin-left: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #2563eb;
+}
+
+.translated-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.copy-button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.copy-button:hover {
+  background-color: #2563eb;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 0.5rem;
+}
